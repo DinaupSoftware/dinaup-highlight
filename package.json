@@ -1,0 +1,315 @@
+{
+  "name": "dinaup-highlight",
+  "displayName": "Dinaup Highlight",
+  "description": "Colorea VB.NET, C#, Blazor, JavaScript y Astro por convenciones de nombre: prefijos, sufijos y patrones. Marca el papel de cada archivo en el explorador e incluye tema de iconos propio.",
+  "version": "2.0.0",
+  "publisher": "dinaup",
+  "license": "MIT",
+  "author": {
+    "name": "Dinaup Software, S.L.",
+    "email": "info@dinaup.com",
+    "url": "https://dinaup.com"
+  },
+  "homepage": "https://github.com/dinaupsoftware/dinaup-highlight#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinaupsoftware/dinaup-highlight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dinaupsoftware/dinaup-highlight/issues"
+  },
+  "qna": "https://github.com/dinaupsoftware/dinaup-highlight/issues",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1F1F1F",
+    "theme": "dark"
+  },
+  "pricing": "Free",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "vb.net",
+    "csharp",
+    "blazor",
+    "razor",
+    "astro",
+    "javascript",
+    "typescript",
+    "icon theme",
+    "naming conventions",
+    "semantic highlighting",
+    "dinaup"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "El coloreado y las marcas del explorador funcionan siempre. El indicador de entorno no lee ningun archivo .env mientras no confies en la carpeta.",
+      "restrictedConfigurations": [
+        "dinaupHighlight.environmentVariables"
+      ]
+    },
+    "virtualWorkspaces": true
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "dinaupHighlight.toggle",
+        "title": "Activar o desactivar el coloreado",
+        "category": "Dinaup"
+      },
+      {
+        "command": "dinaupHighlight.findAllReferences",
+        "title": "Buscar todas las referencias",
+        "category": "Dinaup",
+        "icon": "$(references)"
+      },
+      {
+        "command": "dinaupHighlight.showEnvironment",
+        "title": "Ver el entorno de Dinaup",
+        "category": "Dinaup",
+        "icon": "$(plug)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "dinaupHighlight.findAllReferences",
+          "group": "navigation@1",
+          "when": "dinaupHighlight.supported"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "dinaupHighlight.findAllReferences",
+          "when": "dinaupHighlight.supported"
+        },
+        {
+          "command": "dinaupHighlight.showEnvironment",
+          "when": "dinaupHighlight.isDinaupWorkspace"
+        }
+      ]
+    },
+    "iconThemes": [
+      {
+        "id": "dinaup-icons",
+        "label": "Dinaup",
+        "path": "./icon-theme.json"
+      }
+    ],
+    "configuration": {
+      "title": "Dinaup Highlight",
+      "properties": {
+        "dinaupHighlight.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Colorear con el criterio Dinaup.",
+          "order": 1
+        },
+        "dinaupHighlight.maxFileSizeKB": {
+          "type": "number",
+          "default": 1024,
+          "order": 3,
+          "minimum": 1,
+          "maximum": 51200,
+          "markdownDescription": "Tamano maximo de archivo que se colorea, en KB. Por encima, la extension no interviene. Minimo 1 KB."
+        },
+        "dinaupHighlight.colors": {
+          "type": "object",
+          "default": {},
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$",
+            "patternErrorMessage": "Usa un color hexadecimal de seis digitos, por ejemplo #67E79D."
+          },
+          "order": 4,
+          "markdownDescription": "Sustituye el color de un formato concreto. Clave = nombre del formato (por ejemplo `serviceLayer`), valor = color hexadecimal (`#RRGGBB`). La lista completa de formatos esta en el [README](https://github.com/dinaupsoftware/dinaup-highlight#formatos)."
+        },
+        "dinaupHighlight.explorerMarks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Marcar en el explorador los archivos que siguen la convención de nombres (Page, Subpage, U, Service, Controller...).",
+          "order": 2
+        },
+        "dinaupHighlight.environmentVariables": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "DinaupEnv",
+            "DinaupBranch",
+            "DinaupClientID",
+            "DinaupSecretID"
+          ],
+          "order": 6,
+          "scope": "machine",
+          "markdownDescription": "Variables que se muestran en el indicador de entorno. Se buscan primero en los `.env` de la raiz del workspace y luego en el entorno del sistema. Las que llevan en el nombre Secret, Token, Password, Key, Auth, Credential o similares se enmascaran siempre y no se pueden copiar."
+        },
+        "dinaupHighlight.environmentIndicator": {
+          "type": "boolean",
+          "default": true,
+          "order": 5,
+          "scope": "machine",
+          "markdownDescription": "Muestra en la barra de estado el entorno de Dinaup. Con esto apagado la extension no abre ningun archivo `.env`."
+        }
+      }
+    },
+    "colors": [
+      {
+        "id": "dinaupHighlight.htmlBlazorSubpage",
+        "description": "Nombre en el explorador de los archivos: Subpage",
+        "defaults": {
+          "dark": "#5EC4E6",
+          "light": "#1680A4",
+          "highContrast": "#5EC4E6",
+          "highContrastLight": "#1680A4"
+        }
+      },
+      {
+        "id": "dinaupHighlight.htmlBlazorPage",
+        "description": "Nombre en el explorador de los archivos: Page con routing",
+        "defaults": {
+          "dark": "#78D8F0",
+          "light": "#0E819E",
+          "highContrast": "#78D8F0",
+          "highContrastLight": "#0E819E"
+        }
+      },
+      {
+        "id": "dinaupHighlight.htmlBlazorU",
+        "description": "Nombre en el explorador de los archivos: Componente sin routing",
+        "defaults": {
+          "dark": "#48B0D8",
+          "light": "#1F80A5",
+          "highContrast": "#48B0D8",
+          "highContrastLight": "#1F80A5"
+        }
+      },
+      {
+        "id": "dinaupHighlight.htmlDnzComponent",
+        "description": "Nombre en el explorador de los archivos: Dialog",
+        "defaults": {
+          "dark": "#E48BE4",
+          "light": "#C92AC9",
+          "highContrast": "#E48BE4",
+          "highContrastLight": "#C92AC9"
+        }
+      },
+      {
+        "id": "dinaupHighlight.serviceLayer",
+        "description": "Nombre en el explorador de los archivos: Servicio",
+        "defaults": {
+          "dark": "#67E79D",
+          "light": "#128944",
+          "highContrast": "#67E79D",
+          "highContrastLight": "#128944"
+        }
+      },
+      {
+        "id": "dinaupHighlight.explorer.Controller",
+        "description": "Nombre en el explorador de los archivos: Controlador",
+        "defaults": {
+          "dark": "#E8A05C",
+          "light": "#B36215",
+          "highContrast": "#E8A05C",
+          "highContrastLight": "#B36215"
+        }
+      },
+      {
+        "id": "dinaupHighlight.dataRepository",
+        "description": "Nombre en el explorador de los archivos: Repositorio",
+        "defaults": {
+          "dark": "#9964FF",
+          "light": "#8B4FFF",
+          "highContrast": "#9964FF",
+          "highContrastLight": "#8B4FFF"
+        }
+      },
+      {
+        "id": "dinaupHighlight.dataTransferObject",
+        "description": "Nombre en el explorador de los archivos: DTO",
+        "defaults": {
+          "dark": "#C8A2FF",
+          "light": "#944AFF",
+          "highContrast": "#C8A2FF",
+          "highContrastLight": "#944AFF"
+        }
+      },
+      {
+        "id": "dinaupHighlight.managerClass",
+        "description": "Nombre en el explorador de los archivos: Manager",
+        "defaults": {
+          "dark": "#D4A0FF",
+          "light": "#A63AFF",
+          "highContrast": "#D4A0FF",
+          "highContrastLight": "#A63AFF"
+        }
+      },
+      {
+        "id": "dinaupHighlight.providerClass",
+        "description": "Nombre en el explorador de los archivos: Provider",
+        "defaults": {
+          "dark": "#A0D4FF",
+          "light": "#0077DA",
+          "highContrast": "#A0D4FF",
+          "highContrastLight": "#0077DA"
+        }
+      },
+      {
+        "id": "dinaupHighlight.utilityFunctions",
+        "description": "Nombre en el explorador de los archivos: Helper",
+        "defaults": {
+          "dark": "#CEFFEE",
+          "light": "#008859",
+          "highContrast": "#CEFFEE",
+          "highContrastLight": "#008859"
+        }
+      },
+      {
+        "id": "dinaupHighlight.middlewareLayer",
+        "description": "Nombre en el explorador de los archivos: Middleware",
+        "defaults": {
+          "dark": "#E0A060",
+          "light": "#AD651E",
+          "highContrast": "#E0A060",
+          "highContrastLight": "#AD651E"
+        }
+      },
+      {
+        "id": "dinaupHighlight.enumSuffix",
+        "description": "Nombre en el explorador de los archivos: Enum",
+        "defaults": {
+          "dark": "#FFD080",
+          "light": "#A76900",
+          "highContrast": "#FFD080",
+          "highContrastLight": "#A76900"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "1.75.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.4.5"
+  }
+}

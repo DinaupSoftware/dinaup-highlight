@@ -1,0 +1,251 @@
+{
+  "hidesExplorerArrows": false,
+  "iconDefinitions": {
+    "_razor": {
+      "iconPath": "./icons/razor.svg"
+    },
+    "_css": {
+      "iconPath": "./icons/css.svg"
+    },
+    "_sass": {
+      "iconPath": "./icons/sass.svg"
+    },
+    "_csharp": {
+      "iconPath": "./icons/csharp.svg"
+    },
+    "_visualstudio": {
+      "iconPath": "./icons/visualstudio.svg"
+    },
+    "_nuget": {
+      "iconPath": "./icons/nuget.svg"
+    },
+    "_typescript": {
+      "iconPath": "./icons/typescript.svg"
+    },
+    "_react_ts": {
+      "iconPath": "./icons/react_ts.svg"
+    },
+    "_javascript": {
+      "iconPath": "./icons/javascript.svg"
+    },
+    "_react": {
+      "iconPath": "./icons/react.svg"
+    },
+    "_json": {
+      "iconPath": "./icons/json.svg"
+    },
+    "_html": {
+      "iconPath": "./icons/html.svg"
+    },
+    "_astro": {
+      "iconPath": "./icons/astro.svg"
+    },
+    "_markdown": {
+      "iconPath": "./icons/markdown.svg"
+    },
+    "_yaml": {
+      "iconPath": "./icons/yaml.svg"
+    },
+    "_xml": {
+      "iconPath": "./icons/xml.svg"
+    },
+    "_database": {
+      "iconPath": "./icons/database.svg"
+    },
+    "_console": {
+      "iconPath": "./icons/console.svg"
+    },
+    "_powershell": {
+      "iconPath": "./icons/powershell.svg"
+    },
+    "_document": {
+      "iconPath": "./icons/document.svg"
+    },
+    "_pdf": {
+      "iconPath": "./icons/pdf.svg"
+    },
+    "_zip": {
+      "iconPath": "./icons/zip.svg"
+    },
+    "_tune": {
+      "iconPath": "./icons/tune.svg"
+    },
+    "_git": {
+      "iconPath": "./icons/git.svg"
+    },
+    "_docker": {
+      "iconPath": "./icons/docker.svg"
+    },
+    "_vue": {
+      "iconPath": "./icons/vue.svg"
+    },
+    "_svelte": {
+      "iconPath": "./icons/svelte.svg"
+    },
+    "_image": {
+      "iconPath": "./icons/image.svg"
+    },
+    "_svg": {
+      "iconPath": "./icons/svg.svg"
+    },
+    "_font": {
+      "iconPath": "./icons/font.svg"
+    },
+    "_settings": {
+      "iconPath": "./icons/settings.svg"
+    },
+    "_lock": {
+      "iconPath": "./icons/lock.svg"
+    },
+    "_key": {
+      "iconPath": "./icons/key.svg"
+    },
+    "_certificate": {
+      "iconPath": "./icons/certificate.svg"
+    },
+    "_nodejs": {
+      "iconPath": "./icons/nodejs.svg"
+    },
+    "_tsconfig": {
+      "iconPath": "./icons/tsconfig.svg"
+    },
+    "_readme": {
+      "iconPath": "./icons/readme.svg"
+    },
+    "_vscode": {
+      "iconPath": "./icons/vscode.svg"
+    },
+    "_folder-base": {
+      "iconPath": "./icons/folder-base.svg"
+    },
+    "_blazor": {
+      "iconPath": "./icons/blazor.svg"
+    },
+    "_blazor-ink": {
+      "iconPath": "./icons/blazor-ink.svg"
+    },
+    "_csharp-ink": {
+      "iconPath": "./icons/csharp-ink.svg"
+    },
+    "_folder": {
+      "iconPath": "./icons/folder.svg"
+    },
+    "_folder-open": {
+      "iconPath": "./icons/folder-open.svg"
+    }
+  },
+  "file": "_document",
+  "folder": "_folder",
+  "folderExpanded": "_folder-open",
+  "fileExtensions": {
+    "razor": "_blazor",
+    "cshtml": "_blazor",
+    "css": "_css",
+    "scss": "_sass",
+    "sass": "_sass",
+    "less": "_sass",
+    "cs": "_csharp",
+    "csx": "_csharp",
+    "vb": "_visualstudio",
+    "sln": "_visualstudio",
+    "slnx": "_visualstudio",
+    "suo": "_visualstudio",
+    "csproj": "_nuget",
+    "vbproj": "_nuget",
+    "props": "_nuget",
+    "targets": "_nuget",
+    "nuspec": "_nuget",
+    "ts": "_typescript",
+    "mts": "_typescript",
+    "cts": "_typescript",
+    "tsx": "_react_ts",
+    "js": "_javascript",
+    "mjs": "_javascript",
+    "cjs": "_javascript",
+    "jsx": "_react",
+    "json": "_json",
+    "jsonc": "_json",
+    "json5": "_json",
+    "html": "_html",
+    "htm": "_html",
+    "astro": "_astro",
+    "md": "_markdown",
+    "mdx": "_markdown",
+    "markdown": "_markdown",
+    "yml": "_yaml",
+    "yaml": "_yaml",
+    "xml": "_xml",
+    "xsd": "_xml",
+    "config": "_xml",
+    "vsixmanifest": "_xml",
+    "resx": "_xml",
+    "sql": "_database",
+    "sh": "_console",
+    "bash": "_console",
+    "cmd": "_console",
+    "bat": "_console",
+    "ps1": "_powershell",
+    "psm1": "_powershell",
+    "psd1": "_powershell",
+    "txt": "_document",
+    "log": "_document",
+    "rtf": "_document",
+    "pdf": "_pdf",
+    "zip": "_zip",
+    "rar": "_zip",
+    "7z": "_zip",
+    "gz": "_zip",
+    "tar": "_zip",
+    "vsix": "_zip",
+    "nupkg": "_zip",
+    "env": "_tune",
+    "gitignore": "_git",
+    "gitattributes": "_git",
+    "gitmodules": "_git",
+    "dockerignore": "_docker",
+    "vue": "_vue",
+    "svelte": "_svelte",
+    "png": "_image",
+    "jpg": "_image",
+    "jpeg": "_image",
+    "gif": "_image",
+    "webp": "_image",
+    "ico": "_image",
+    "bmp": "_image",
+    "svg": "_svg",
+    "ttf": "_font",
+    "otf": "_font",
+    "woff": "_font",
+    "woff2": "_font",
+    "ini": "_settings",
+    "toml": "_settings",
+    "editorconfig": "_settings",
+    "lock": "_lock",
+    "pem": "_key",
+    "key": "_key",
+    "crt": "_key",
+    "pfx": "_key",
+    "cer": "_certificate",
+    "p12": "_certificate"
+  },
+  "fileNames": {
+    "dockerfile": "_docker",
+    "package.json": "_nodejs",
+    "package-lock.json": "_nodejs",
+    "tsconfig.json": "_tsconfig",
+    "readme.md": "_readme",
+    "license": "_certificate",
+    ".gitignore": "_git",
+    ".gitattributes": "_git",
+    ".env": "_tune",
+    ".vscodeignore": "_vscode"
+  },
+  "light": {
+    "fileExtensions": {
+      "razor": "_blazor-ink",
+      "cshtml": "_blazor-ink",
+      "cs": "_csharp-ink",
+      "csx": "_csharp-ink"
+    }
+  }
+}
